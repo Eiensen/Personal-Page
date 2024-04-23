@@ -117,7 +117,7 @@ const handleClick = () => {
 .block-component__button {
   font-size: 16px;
   width: 80%;
-  margin-top: 280px;
+  margin-top: 200px;
 }
 }
 
@@ -138,7 +138,7 @@ const handleClick = () => {
 .block-component__button {
   font-size: 14px;
   width: 80%;
-  margin-top: 330px;
+  margin-top: 250px;
 }
 }
 </style>
