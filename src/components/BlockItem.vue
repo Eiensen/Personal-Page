@@ -42,9 +42,9 @@ const handleClick = () => {
 </script>
 
 <style scoped>
-.block{
-  width:100%;
-  height: 80vh;  
+.block {
+  width: 100%;
+  height: 80vh;
 }
 .block-component {
   display: flex;
@@ -93,52 +93,52 @@ const handleClick = () => {
   margin-top: 50px;
 }
 
-@media screen and (min-width: 1600px){
-  .block--title{
+@media screen and (min-width: 1600px) {
+  .block--title {
     padding: 5% 20%;
   }
 }
 
-@media screen and (min-width: 500px) and (max-width: 1000px){
-  .block{
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .block {
     display: flex;
     justify-content: center;
   }
-  .block-component__title {  
-  font-size: 50px;
-}
-.block-component__subtitle { 
-  font-size: 32px;
-}
-.block-component__description {
-  font-size: 18px;  
-  margin-left: -80px;
-}
-.block-component__button {
-  font-size: 16px;
-  width: 80%;
-  margin-top: 200px;
-}
+  .block-component__title {
+    font-size: 50px;
+  }
+  .block-component__subtitle {
+    font-size: 32px;
+  }
+  .block-component__description {
+    font-size: 18px;
+    margin-left: -80px;
+  }
+  .block-component__button {
+    font-size: 16px;
+    width: 80%;
+    margin-top: 200px;
+  }
 }
 
-@media screen and (max-width: 499px){
-  .block{
+@media screen and (max-width: 499px) {
+  .block {
     display: flex;
     justify-content: center;
   }
-  .block-component__title {  
-  font-size: 40px;
-}
-.block-component__subtitle { 
-  font-size: 24px;
-}
-.block-component__description {
-  font-size: 16px;  
-}
-.block-component__button {
-  font-size: 14px;
-  width: 80%;
-  margin-top: 250px;
-}
+  .block-component__title {
+    font-size: 40px;
+  }
+  .block-component__subtitle {
+    font-size: 24px;
+  }
+  .block-component__description {
+    font-size: 16px;
+  }
+  .block-component__button {
+    font-size: 14px;
+    width: 80%;
+    margin-top: 250px;
+  }
 }
 </style>
