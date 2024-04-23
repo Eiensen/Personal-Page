@@ -1,61 +1,63 @@
 <template>
-  <div :class="`block-component block-component--${backgroundImage}`">
-    <span class="block-component__title">{{ title }}</span>
-    <span class="block-component__subtitle">{{ subtitle }}</span>
-    <p class="block-component__description" v-html="description"></p>
-    <button class="block-component__button" @click="handleClick">{{ buttonText }}</button>
+  <div :class="`block block--${backgroundImage}`">
+    <div class="block-component">
+      <span class="block-component__title">{{ title }}</span>
+      <span class="block-component__subtitle">{{ subtitle }}</span>
+      <p class="block-component__description" v-html="description"></p>
+      <button class="block-component__button" @click="handleClick">{{ buttonText }}</button>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { defineProps, defineEmits } from 'vue'
 
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      required: true
-    },
-    subtitle: {
-      type: String,
-      required: false
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    buttonText: {
-      type: String,
-      required: true
-    },
-    backgroundImage: {
-      type: String,
-      default: ''
-    }
+const props = defineProps({
+  title: {
+    type: String,
+    required: true
   },
-  emits: ['click'],
-  methods: {
-    handleClick() {
-      this.$emit('click')
-    }
+  subtitle: {
+    type: String,
+    required: false
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  buttonText: {
+    type: String,
+    required: true
+  },
+  backgroundImage: {
+    type: String,
+    default: ''
   }
 })
+const emit = defineEmits(['click'])
+
+const handleClick = () => {
+  emit('click')
+}
 </script>
 
 <style scoped>
+.block{
+  width:100%;
+  height: 80vh;  
+}
 .block-component {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5% 15%;
-  width: 100%;
-  min-height: 80vh;
+  width: min-content;
 }
 
-.block-component--title {
+.block--title {
   background-image: url('../assets/bg/bg-title.JPG');
   background-size: cover;
   background-position: center;
+  padding: 8% 13%;
 }
 .block-component__title {
   margin: 0;
@@ -89,5 +91,54 @@ export default defineComponent({
   border-radius: 25px;
   width: 50%;
   margin-top: 50px;
+}
+
+@media screen and (min-width: 1600px){
+  .block--title{
+    padding: 5% 20%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1000px){
+  .block{
+    display: flex;
+    justify-content: center;
+  }
+  .block-component__title {  
+  font-size: 50px;
+}
+.block-component__subtitle { 
+  font-size: 32px;
+}
+.block-component__description {
+  font-size: 18px;  
+  margin-left: -80px;
+}
+.block-component__button {
+  font-size: 16px;
+  width: 80%;
+  margin-top: 280px;
+}
+}
+
+@media screen and (max-width: 499px){
+  .block{
+    display: flex;
+    justify-content: center;
+  }
+  .block-component__title {  
+  font-size: 40px;
+}
+.block-component__subtitle { 
+  font-size: 24px;
+}
+.block-component__description {
+  font-size: 16px;  
+}
+.block-component__button {
+  font-size: 14px;
+  width: 80%;
+  margin-top: 330px;
+}
 }
 </style>

@@ -5,7 +5,7 @@
       subtitle="для твоих целей"
       :description="styledDescriptionForTitle"
       button-text="Записаться на занятие"
-      backgroundImage="title"
+      background-image="title"
       @click="handleBlockClick"
     />
     <BlockItem
@@ -29,26 +29,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import BlockItem from './BlockItem.vue'
 
-export default defineComponent({
-  components: {
-    BlockItem
-  },
-  setup() {
-    const handleBlockClick = () => {
-      console.log('handleBlockClick')
-    }
-    const styledDescriptionForTitle: string =
-      'Занятия, на которых ты научишься свободно <span style="color: #d0a933;">говорить</span> и <span style="color: #d0a933;">понимать</span> носителей'
-    return {
-      handleBlockClick,
-      styledDescriptionForTitle
-    }
-  }
-})
+const handleBlockClick = () => {
+  console.log('handleBlockClick')
+}
+const styledDescriptionForTitle: string =
+  'Занятия, на которых ты научишься свободно <span style="color: #d0a933;">говорить</span> и <span style="color: #d0a933;">понимать</span> носителей'
 </script>
 
 <style scoped>
