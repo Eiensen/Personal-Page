@@ -1,39 +1,20 @@
 <template>
-  <div :class="`block block--${backgroundImage}`">
+  <div class="block block--title">
     <div class="block-component">
       <span class="block-component__title">{{ title }}</span>
       <span class="block-component__subtitle">{{ subtitle }}</span>
       <p class="block-component__description" v-html="description"></p>
-      <button class="block-component__button" @click="handleClick">{{ buttonText }}</button>
+      <button class="block-component__button" @click="handleClick">Записаться на занятие</button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue'
+const title: string = 'АНГЛИЙСКИЙ'
+const subtitle: string = 'для твоих целей'
+const description: string =
+  'Занятия, на которых ты научишься свободно <span style="color: #d0a933;">говорить</span> и <span style="color: #d0a933;">понимать</span> носителей'
 
-const props = defineProps({
-  title: {
-    type: String,
-    required: true
-  },
-  subtitle: {
-    type: String,
-    required: false
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  buttonText: {
-    type: String,
-    required: true
-  },
-  backgroundImage: {
-    type: String,
-    default: ''
-  }
-})
 const emit = defineEmits(['click'])
 
 const handleClick = () => {
@@ -111,13 +92,13 @@ const handleClick = () => {
     font-size: 32px;
   }
   .block-component__description {
-    font-size: 18px;
+    font-size: 20px;
     margin-left: -80px;
   }
   .block-component__button {
     font-size: 16px;
     width: 80%;
-    margin-top: 200px;
+    margin-top: 300px;
   }
 }
 
@@ -138,7 +119,7 @@ const handleClick = () => {
   .block-component__button {
     font-size: 14px;
     width: 80%;
-    margin-top: 250px;
+    margin-top: 350px;
   }
 }
 </style>
